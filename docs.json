@@ -159,26 +159,55 @@
     }
   },
   "contextual": {
-    "options": ["copy", "view", "chatgpt", "claude"]
+    "options": [
+      "copy",
+      "view",
+      "chatgpt",
+      "claude"
+    ]
   },
   "footer": {
     "links": [
       {
         "header": "Companion",
         "items": [
-          { "label": "Website", "href": "https://www.msgcompanion.com" },
-          { "label": "Open the app", "href": "https://app.msgcompanion.com" },
-          { "label": "Service status", "href": "https://status.msgcompanion.com" }
+          {
+            "label": "Website",
+            "href": "https://www.msgcompanion.com"
+          },
+          {
+            "label": "Open the app",
+            "href": "https://app.msgcompanion.com"
+          },
+          {
+            "label": "Service status",
+            "href": "https://status.msgcompanion.com"
+          }
         ]
       },
       {
         "header": "Legal",
         "items": [
-          { "label": "Privacy", "href": "https://www.msgcompanion.com/privacy" },
-          { "label": "Terms", "href": "https://www.msgcompanion.com/terms" },
-          { "label": "Data processing", "href": "https://www.msgcompanion.com/dpa" }
+          {
+            "label": "Privacy",
+            "href": "https://www.msgcompanion.com/privacy"
+          },
+          {
+            "label": "Terms",
+            "href": "https://www.msgcompanion.com/terms"
+          },
+          {
+            "label": "Data processing",
+            "href": "https://www.msgcompanion.com/dpa"
+          }
         ]
       }
     ]
-  }
+  },
+  "redirects": [
+    {
+      "source": "/quickstart",
+      "destination": "/get-started/quickstart"
+    }
+  ]
 }
