@@ -1,72 +1,184 @@
 {
   "$schema": "https://mintlify.com/docs.json",
   "theme": "mint",
-  "name": "Mintlify Starter Kit",
+  "name": "Companion Help",
+  "description": "How to set up and use Companion, the shared WhatsApp inbox for your team.",
   "colors": {
-    "primary": "#16A34A",
-    "light": "#07C983",
-    "dark": "#15803D"
+    "primary": "#12A150",
+    "light": "#2ECB70",
+    "dark": "#0A6B36"
   },
-  "favicon": "/favicon.svg",
-  "navigation": {
-    "pages": [
-      {
-        "group": "Getting Started",
-        "pages": [
-          "index",
-          "quickstart"
-        ]
-      }
-    ],
-    "global": {
-      "anchors": [
-        {
-          "anchor": "Documentation",
-          "href": "https://mintlify.com/docs",
-          "icon": "book-open-cover"
-        },
-        {
-          "anchor": "Blog",
-          "href": "https://mintlify.com/blog",
-          "icon": "newspaper"
-        }
-      ]
-    }
-  },
+  "favicon": "/favicon.png",
   "logo": {
     "light": "/logo/light.svg",
-    "dark": "/logo/dark.svg"
+    "dark": "/logo/dark.svg",
+    "href": "https://www.msgcompanion.com"
+  },
+  "navigation": {
+    "groups": [
+      {
+        "group": "Get started",
+        "pages": [
+          "index",
+          "get-started/quickstart",
+          "get-started/connect-whatsapp",
+          "get-started/how-whatsapp-messaging-works",
+          "get-started/find-your-way-around"
+        ]
+      },
+      {
+        "group": "Conversations",
+        "pages": [
+          "conversations/inbox",
+          "conversations/replying",
+          "conversations/products-payments-and-more",
+          "conversations/assigning-and-organising",
+          "conversations/saved-replies",
+          "conversations/notifications"
+        ]
+      },
+      {
+        "group": "Templates and forms",
+        "pages": [
+          "templates/overview",
+          "templates/create-a-template",
+          "templates/forms",
+          "templates/form-submissions",
+          "templates/take-bookings-with-a-form"
+        ]
+      },
+      {
+        "group": "Contacts",
+        "pages": [
+          "contacts/overview",
+          "contacts/import-and-export",
+          "contacts/sync-from-your-shop",
+          "contacts/opt-outs"
+        ]
+      },
+      {
+        "group": "Broadcasts",
+        "pages": [
+          "broadcasts/send-a-broadcast",
+          "broadcasts/audiences",
+          "broadcasts/reach-and-results"
+        ]
+      },
+      {
+        "group": "Workflows",
+        "pages": [
+          "workflows/overview",
+          "workflows/build-a-workflow",
+          "workflows/test-and-run-log"
+        ]
+      },
+      {
+        "group": "Website chat",
+        "pages": [
+          "website-chat/overview",
+          "website-chat/install",
+          "website-chat/customise",
+          "website-chat/shopify-app"
+        ]
+      },
+      {
+        "group": "Integrations",
+        "pages": [
+          "integrations/overview",
+          "integrations/shopify",
+          "integrations/payment-links",
+          "integrations/webhooks-and-custom-api"
+        ]
+      },
+      {
+        "group": "Home and analytics",
+        "pages": [
+          "analytics/home",
+          "analytics/analytics"
+        ]
+      },
+      {
+        "group": "Phone app",
+        "pages": [
+          "phone-app/get-the-app",
+          "phone-app/using-the-app",
+          "phone-app/notifications"
+        ]
+      },
+      {
+        "group": "Team and security",
+        "pages": [
+          "team/roles",
+          "team/invite-people",
+          "team/teams",
+          "team/your-account-and-two-factor",
+          "team/audit-log"
+        ]
+      },
+      {
+        "group": "Plans and billing",
+        "pages": [
+          "billing/plans",
+          "billing/free-trial",
+          "billing/manage-your-plan",
+          "billing/meta-charges"
+        ]
+      },
+      {
+        "group": "Workspace settings",
+        "pages": [
+          "settings/workspace",
+          "settings/your-data",
+          "settings/refer-a-business"
+        ]
+      },
+      {
+        "group": "Help",
+        "pages": [
+          "help/troubleshooting",
+          "help/contact-support"
+        ]
+      }
+    ]
   },
   "navbar": {
     "links": [
       {
         "label": "Support",
-        "href": "mailto:support@mintlify.com"
+        "href": "mailto:support@msgcompanion.com"
+      },
+      {
+        "label": "Status",
+        "href": "https://status.msgcompanion.com"
       }
     ],
     "primary": {
       "type": "button",
-      "label": "Dashboard",
-      "href": "https://app.mintlify.com"
+      "label": "Open Companion",
+      "href": "https://app.msgcompanion.com"
     }
   },
   "contextual": {
-    "options": [
-      "copy",
-      "view",
-      "chatgpt",
-      "claude",
-      "perplexity",
-      "mcp",
-      "cursor",
-      "vscode"
-    ]
+    "options": ["copy", "view", "chatgpt", "claude"]
   },
   "footer": {
-    "socials": {
-      "x": "https://x.com/mintlify",
-      "github": "https://github.com/mintlify",
-      "linkedin": "https://linkedin.com/company/mintlify"
-    }
+    "links": [
+      {
+        "header": "Companion",
+        "items": [
+          { "label": "Website", "href": "https://www.msgcompanion.com" },
+          { "label": "Open the app", "href": "https://app.msgcompanion.com" },
+          { "label": "Service status", "href": "https://status.msgcompanion.com" }
+        ]
+      },
+      {
+        "header": "Legal",
+        "items": [
+          { "label": "Privacy", "href": "https://www.msgcompanion.com/privacy" },
+          { "label": "Terms", "href": "https://www.msgcompanion.com/terms" },
+          { "label": "Data processing", "href": "https://www.msgcompanion.com/dpa" }
+        ]
+      }
+    ]
   }
 }

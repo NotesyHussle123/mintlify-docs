@@ -1,0 +1,98 @@
+---
+title: "Forms"
+description: "Build a form customers fill in inside WhatsApp, and send it from a chat, a workflow or a broadcast."
+---
+
+A form is a template with a form button. The customer taps the button, the form opens inside WhatsApp, and their answers come back to you. Use one for a booking request, an enquiry, a quote or feedback.
+
+Forms have no page of their own. You build, submit and manage them under **Templates**.
+
+<Note>
+Owners and admins build forms. Once Meta has approved one, anyone on the team can send it from a conversation.
+</Note>
+
+## Build a form
+
+<Steps>
+  <Step title="Start a template with a form">
+    Go to **Templates** and choose **Create new**. Under **Message type**, pick **Template with a form**.
+  </Step>
+  <Step title="Write the message">
+    On the **Edit** step, give the template a name and write the message that carries the form. It already has a form button. Change the button's label if you like. See [Create a template](/templates/create-a-template).
+  </Step>
+  <Step title="Name the form">
+    On the **Form** step, enter a **Form name**. It is for your own reference and customers do not see it. Choose a **Kind of form**, such as Appointment booking, Contact us or Survey.
+  </Step>
+  <Step title="Add the questions">
+    Click a component in the list to add it to the screen, or drag it into place. Select a component to change its label and settings.
+
+    To save time, choose **Start from a starter** and pick **Booking request**, **Bespoke enquiry**, **Quote request**, **Client details** or **Feedback**, then change it to suit you.
+  </Step>
+  <Step title="Add more screens if you need them">
+    Choose **Add screen** to split a long form into steps. The button at the foot of each screen moves the customer on, and the last one sends the form.
+  </Step>
+  <Step title="Fix anything flagged">
+    Problems are listed under **To fix before publishing**. Meta's limits are checked as you build, so you find out now and not after submitting.
+  </Step>
+  <Step title="Submit for review">
+    Choose **Next**, check the summary, then choose **Submit for review**. The form is published to your WhatsApp Business account at the same time. Once Meta approves the template, it can be sent.
+  </Step>
+</Steps>
+
+## What you can put in a form
+
+| Group | Components |
+| --- | --- |
+| **Text** | Heading, Subheading, Body text, Caption, Rich text |
+| **Inputs** | Text field (text, number, email, phone and more), Text area |
+| **Choices** | Single choice, Multiple choice, Dropdown, Chips |
+| **Dates** | Date picker, Calendar |
+| **Media** | Image, Image carousel, Photo upload, Document upload |
+| **Navigation** | Navigation list, Link, Opt-in tick box |
+| **Logic** | If, Switch |
+
+**If** shows fields only when an earlier answer matches. **Switch** shows different fields for each answer.
+
+## Forms that read live content
+
+Options, dates and images are normally typed into the builder. Some components can fetch their content each time a customer opens the screen. Select the component and change **Comes from**:
+
+- **Your catalogue** fills a list of choices with the first in-stock products in your connected shop, with their prices.
+- **A web address of your own** asks your own system for the content. This needs the Business plan. It is for a developer to set up.
+
+What you typed in the builder is used whenever the source does not answer, so a form never breaks because a source did.
+
+If Companion says live forms are not switched on for your workspace, email [support@msgcompanion.com](mailto:support@msgcompanion.com).
+
+## How many forms your plan covers
+
+| Plan | Forms |
+| --- | --- |
+| Starter | 5 |
+| Growth | Unlimited |
+| Business | Unlimited |
+
+The free trial runs on Growth's limits.
+
+A form counts once its template has been submitted to Meta. Drafts do not count, and neither do templates Meta rejected or disabled, or ones that have been deleted. On Starter, the **Templates** page shows how many you have used.
+
+At the limit, you can still build a form and save it as a draft. To submit it, move up a plan or delete a form template you no longer use.
+
+## Send a form
+
+A form can only be sent once its template is **Approved**.
+
+- **From a chat.** Open the conversation, choose **Send a template**, and pick the form's template.
+- **From a workflow.** Add a **Send a template** step and choose the form's template. See [Build a workflow](/workflows/build-a-workflow).
+- **From a broadcast.** Choose the form's template when you create the broadcast. It must be a marketing or utility template. See [Send a broadcast](/broadcasts/send-a-broadcast).
+
+## Change a form
+
+An approved template is locked, and so is its form. To change the questions, duplicate the template, edit the copy and submit it. Answers to the copy are listed under the copy, not the original.
+
+## Related
+
+- [Form submissions](/templates/form-submissions)
+- [Create a template](/templates/create-a-template)
+- [Plans](/billing/plans)
+- [Webhooks and custom API](/integrations/webhooks-and-custom-api)

@@ -1,0 +1,85 @@
+---
+title: "Connect Shopify"
+description: "Connect your Shopify store to send products in chats, see what each customer has ordered and bring your customers into Contacts."
+---
+
+Connecting your Shopify store lets your team use it without leaving a chat.
+
+<Note>
+Owners and admins only. On Starter, Shopify is one of your 2 integrations.
+</Note>
+
+This is different from the free Shopify app, which only adds a WhatsApp button to your storefront and reads nothing from your store. See [The Shopify app](/website-chat/shopify-app). You can use both.
+
+## Connect your store
+
+<Steps>
+  <Step title="Open Integrations">
+    Go to **Integrations** and find **Shopify**. It is under **Ecommerce**.
+  </Step>
+  <Step title="Choose Add">
+    A window opens. Enter your store and sign in to Shopify.
+  </Step>
+  <Step title="Approve access">
+    Shopify shows what Companion is asking for. Approve it.
+  </Step>
+  <Step title="Check the card">
+    The Shopify card now shows **Connected**, your store's address ending in `.myshopify.com`, and "Reads products and stock, customers and orders."
+  </Step>
+</Steps>
+
+Companion reads from your store as soon as it is connected. If that first read fails, the card shows **Needs attention** with the reason. Put it right, then choose **Check connection** or **Reconnect**.
+
+## What it unlocks
+
+### Products in chat
+
+In a WhatsApp conversation, choose **More actions**, then **Send product**. Search your store by name or product code and send the product into the chat.
+
+Products are read live from your store, so prices and stock are current. Sending a product only works inside the 24-hour window.
+
+Your products can also be used in two other places:
+
+- When you build a payment link, you can add items by searching your store.
+- A workflow can send a product with the **Send a product** step.
+
+### Customer details beside the chat
+
+When a customer's phone number matches a customer in your store, the **Customer file** panel beside the conversation shows what your store knows about them:
+
+- Their email address and their tags in Shopify.
+- **Orders**: how many orders they have placed.
+- **Lifetime value**: what they have spent.
+- **Last order**: the date of their latest order.
+
+This is read live each time you open the conversation and is not stored in Companion. If the customer is not in your store, those lines are simply not shown.
+
+### Contacts from your store
+
+Your Shopify customers are added to **Contacts**:
+
+- when you connect the store,
+- every night,
+- and whenever you choose **Sync** on the Contacts page.
+
+A sync never overwrites details you have typed, and it never opts anyone in to marketing. A customer who has unsubscribed in your store comes in as opted out. See [Sync contacts from your shop](/contacts/sync-from-your-shop).
+
+## If something goes wrong
+
+The Shopify card says what went wrong and when a read last worked.
+
+- **Check connection** tries a read. If it works, the fault clears.
+- **Reconnect** signs in to Shopify again. Use it when Shopify has turned the connection down, or when Companion was not allowed to read something it needs.
+
+## Disconnect
+
+On the Shopify card, choose **Disconnect** and confirm. The product picker and stock, customer lookups, the contact sync and order history stop working until you connect again.
+
+Nothing is deleted in Shopify.
+
+## Related
+
+- [Integrations overview](/integrations/overview)
+- [Products, payments and more](/conversations/products-payments-and-more)
+- [Sync contacts from your shop](/contacts/sync-from-your-shop)
+- [Payment links with Square](/integrations/payment-links)

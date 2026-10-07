@@ -1,0 +1,127 @@
+---
+title: "Build a workflow"
+description: "Every trigger and step the builder offers, how conditions and waits work, and how to switch a workflow on."
+---
+
+<Note>
+Owners and admins only. Everyone else can open a workflow and look, but the canvas is locked.
+</Note>
+
+## Build one
+
+<Steps>
+  <Step title="Create it">
+    Go to **Workflows** and choose **New workflow**. Give it a name and choose **Open the builder**. Or choose **Start from this** on a ready-made workflow.
+  </Step>
+  <Step title="Choose the trigger">
+    A blank workflow starts with the **Customer messages you** trigger. To use a different one, remove it and add another from **Triggers** on the left. A workflow has exactly one trigger.
+  </Step>
+  <Step title="Add steps">
+    Click a step in the list on the left, or drag it onto the canvas. Then join the steps up in the order they should run, starting from the trigger.
+  </Step>
+  <Step title="Fill in each step">
+    Click a step on the canvas. Its settings open on the right. A step that is not filled in yet says so on the canvas, such as **No message written yet**.
+  </Step>
+  <Step title="Save">
+    Choose **Save changes**. Saving does not switch the workflow on.
+  </Step>
+</Steps>
+
+A workflow cannot loop back on itself. The builder refuses a connection that would make one.
+
+## Triggers
+
+| Trigger | When it runs |
+| --- | --- |
+| **Customer messages you** | When a customer writes to you. You can limit it to messages containing words you choose, separated by commas. It runs at most once per conversation every 12 hours unless you change the number; 0 runs it on every message. Reactions, submitted forms and STOP never start it. |
+| **New conversation starts** | Once, on a new customer's first message. |
+| **Payment link is paid** | When a customer pays a link you sent in the chat. |
+| **Conversation goes quiet** | When a customer has been left waiting for the time you set. It only counts customers left waiting after you switch it on, and runs once for each time a customer is left waiting. |
+| **On a schedule** | Every day, every week or every month at a time you set, in your workspace's time zone. It runs within 15 minutes of that time. You choose who it reaches: **Conversations with a tag**, **Every open conversation** or **Open conversations nobody is assigned to**. |
+| **Form submitted** | When a customer sends back a form from one of your templates. You can limit it to one template's form by its name. |
+
+A scheduled workflow never runs without an audience, and one run reaches at most 1,000 conversations. If the audience is larger, the run is refused: narrow it with a tag.
+
+## Steps that send
+
+| Step | What it does |
+| --- | --- |
+| **Send a message** | Sends a plain WhatsApp message into the conversation. Only works inside the 24-hour window. |
+| **Send a template** | Sends an approved template, so it works outside the 24-hour window. Fill in a value for each of the template's variables. |
+| **Send a product** | Sends a product from your connected shop, by SKU or product ID. Only works inside the 24-hour window. |
+| **Send a payment link** | Sends a payment link for the amount you set. Needs Square connected. Only works inside the 24-hour window. |
+
+In a message, a template variable, a payment link's description or a team notification you can use these tokens:
+
+- `{{name}}` or `{{first_name}}`: the customer's first name.
+- `{{full_name}}`: their full name.
+- `{{phone}}`: their phone number.
+
+<Note>
+If typed replies are switched off for your team, **Send a message** steps still send. Meta may charge for them like any other reply sent from Companion.
+</Note>
+
+Templates sent by a scheduled workflow count towards your plan's broadcast reach. A marketing template is never sent to a customer who has opted out.
+
+## Conditions and waits
+
+These are under **Route** in the list. A condition has two ways out, **Yes** and **No**. Join each one to the step that should follow. A branch with nothing joined to it simply ends the run.
+
+| Step | What it checks or does |
+| --- | --- |
+| **Did they reply?** | Waits up to the time you set, then splits on whether the customer wrote in that time. |
+| **Has a tag** | Whether the conversation carries the tag you name. |
+| **Message contains** | Whether the customer's message has any of your words or phrases, as whole words. |
+| **Inside opening hours** | Whether it is within the days and hours you set, in your workspace's time zone. Until you set them, every time counts as closed. |
+| **24-hour window is open** | Whether a typed message can still be sent, or only a template. |
+| **Opted out of marketing** | Whether the customer has asked not to get marketing. |
+| **Wait** | Pauses for the minutes, hours or days you set before the next step. |
+
+A run can wait for days. Before every step and after every wait, Companion checks that the workflow is still switched on. If it is not, the run stops and nothing more is sent.
+
+## Steps for your team
+
+These are under **Internal** in the list. The customer does not see them.
+
+| Step | What it does |
+| --- | --- |
+| **Assign to someone** | Assigns the conversation to the member you choose. |
+| **Add a tag** | Tags the conversation. |
+| **Remove a tag** | Takes a tag off the conversation. |
+| **Archive the conversation** | Takes it out of the inbox. A new message from the customer brings it back. |
+| **Add an internal note** | Leaves a note on the conversation that the customer never sees. |
+| **Notify the team** | Sends a notification to the phone app of the rep assigned to the conversation, or of everyone when nobody is assigned. |
+| **Call a webhook** | Posts the customer and conversation to one of your outgoing webhooks. Needs the Business plan. See [Webhooks and custom API](/integrations/webhooks-and-custom-api). |
+
+## Switch it on
+
+<Steps>
+  <Step title="Turn the switch on">
+    Use the switch on the workflow's page, or on its card on the Workflows page.
+  </Step>
+  <Step title="Read what it will do">
+    Companion tells you what switching on means for this workflow. For a scheduled one, that includes how many open conversations each run would reach as things stand.
+  </Step>
+  <Step title="Confirm">
+    Choose **Switch on**. It runs on its next trigger.
+  </Step>
+</Steps>
+
+If the workflow cannot run yet, Companion says why and does not switch it on. The usual reasons are no trigger, a trigger joined to nothing, a schedule with no time or no audience, or a plan with no room for another workflow.
+
+To switch a workflow off, turn the switch off. It stops at once. Runs that were waiting stop too.
+
+## Edit a workflow that is switched on
+
+You can edit a workflow while it is on. Change the canvas and choose **Save changes**. New runs use the saved version.
+
+If your changes leave it unable to run, for example a schedule that has lost its audience, Companion saves your work and switches the workflow off. The message tells you what to put right.
+
+From the menu beside the switch you can also **Rename**, **Duplicate** or **Delete** a workflow. A duplicate starts switched off. Deleting stops any waiting runs and cannot be undone. Messages already sent stay in their conversations.
+
+## Related
+
+- [Workflows overview](/workflows/overview)
+- [Test a workflow and read the run log](/workflows/test-and-run-log)
+- [Templates overview](/templates/overview)
+- [How WhatsApp messaging works](/get-started/how-whatsapp-messaging-works)

@@ -1,0 +1,111 @@
+---
+title: "Import and export contacts"
+description: "Bring in a customer list from a CSV file, undo an import, and download your contacts."
+---
+
+<Note>
+Owners and admins only.
+</Note>
+
+## Before you import
+
+Your file must be a CSV. Most spreadsheet apps can save or export one.
+
+- Up to 5,000 rows, and no larger than 2 MB. Split a bigger list into several files.
+- The first row holds the column headings.
+- Each row needs a phone number or an email address.
+- Numbers starting 07 are read as UK mobiles. Other numbers need their country code.
+
+<Warning>
+Importing a contact does not mean they have agreed to hear from you on WhatsApp. Only message people who have asked to hear from you. Importing never opts anyone in to marketing.
+</Warning>
+
+## Import a CSV
+
+<Steps>
+  <Step title="Choose your file">
+    Go to **Contacts**, choose **Import**, and choose your CSV file.
+  </Step>
+  <Step title="Match the columns">
+    Companion reads your headings and guesses which column is which. Check each one and change any that are wrong. Choose **Not in this file** for anything you do not have.
+
+    | Field | Notes |
+    | --- | --- |
+    | **Name, or first name** | |
+    | **Last name** | Optional. Joined to the first name. |
+    | **Phone number** | |
+    | **Email** | Optional if you have a phone number column. |
+    | **Notes** | Optional. |
+    | **Opted out of marketing** | Optional. Yes, true, 1 or unsubscribed opts the person out. |
+    | **Tags** | Optional. Several in one cell, separated by commas. |
+  </Step>
+  <Step title="Name the list">
+    Under **Name this list**, give the import a name, such as "Spring fair guests". You can then send a broadcast to just these people, or undo the import.
+  </Step>
+  <Step title="Decide what happens to people you already have">
+    Leave **Update existing contacts** off to leave them as they are. Turn it on to fill in their blank names, emails and notes, and add tags. Nothing you typed is ever overwritten.
+  </Step>
+  <Step title="Check the rows">
+    Choose **Check rows**. The preview shows what will happen to every row before anything is saved.
+
+    | Label | What it means |
+    | --- | --- |
+    | **Will import** | A new contact. |
+    | **Will update** | Already a contact, and their blanks will be filled in. |
+    | **Already a contact** | Already in your contacts. They are added to this list and otherwise left as they are. |
+    | **Duplicate** | The same number or email appears earlier in the file. The first row wins. |
+    | **Will skip** | The row has a problem, such as a number that cannot be read. The reason is shown. |
+    | **Opted out** | Your file says this person has opted out of marketing. |
+
+    Choose **Back** to change the matching.
+  </Step>
+  <Step title="Import">
+    Choose **Import contacts**. A summary tells you how many were imported and updated.
+  </Step>
+</Steps>
+
+An opt-out column in your file is always honoured, for people you already have as well as new ones.
+
+## Imports are named lists
+
+Each import is kept as a list. Everyone on the file belongs to it, including people who were already contacts.
+
+- To see the people on a list, go to **Contacts**, choose **Imports**, then **View** beside the list.
+- To send to a list, choose it as the audience of a broadcast. See [Audiences](/broadcasts/audiences).
+
+## Undo an import
+
+<Steps>
+  <Step title="Open your imports">
+    Go to **Contacts** and choose **Imports**.
+  </Step>
+  <Step title="Undo it">
+    Choose **Undo** beside the import, then **Undo this import**.
+  </Step>
+</Steps>
+
+The contacts the import added are removed, and the list stops being an audience.
+
+Some people are kept:
+
+- anyone who was already a contact before the import. They are only taken off the list
+- anyone who has since messaged you
+- anyone who has also come in from another source, such as your shop or a later import
+- anyone who has opted out, so the opt-out is not lost
+
+Details the import filled in on existing contacts stay.
+
+## Export your contacts
+
+Go to **Contacts** and choose **Export**. A CSV of every contact downloads.
+
+The file has one row for each contact: phone number and any other numbers, name, email, notes, tags, where they came from, when and how they opted out of marketing, how many conversations they have, and when they were added.
+
+To export conversations, messages and other data, see [Your data](/settings/your-data).
+
+## Related
+
+- [Contacts](/contacts/overview)
+- [Opt-outs](/contacts/opt-outs)
+- [Audiences](/broadcasts/audiences)
+- [Your data](/settings/your-data)

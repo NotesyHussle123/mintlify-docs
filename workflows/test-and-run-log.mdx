@@ -1,0 +1,103 @@
+---
+title: "Test a workflow and read the run log"
+description: "Try a workflow before you switch it on, see what every run did, and find out when one fails."
+---
+
+<Note>
+Everyone can read the run log. A rep sees the runs for their own conversations and the unassigned ones. Only owners and admins can start a test run.
+</Note>
+
+## Try a workflow with Test run
+
+A test runs the saved workflow once for one conversation, whether or not the workflow is switched on.
+
+<Steps>
+  <Step title="Save first">
+    Open the workflow. If you have unsaved changes, choose **Save changes**. A test runs the saved version, so **Test run** is unavailable until you save.
+  </Step>
+  <Step title="Choose Test run">
+    Choose **Test run**, then pick a conversation from your recent ones.
+  </Step>
+  <Step title="Leave Send for real off">
+    With **Send for real** off, nothing is sent or changed. Choose **Run without sending**.
+  </Step>
+  <Step title="Read the result">
+    The run appears in the run log a few seconds later, marked **Test**. Open it to see what each step would have done.
+  </Step>
+</Steps>
+
+In a test:
+
+- Conditions are checked for real, so the test follows the branch a real run would take.
+- **Wait** steps are skipped, so you get the result straight away.
+- **Did they reply?** does not wait. It takes the **No** branch.
+- The trigger's own limits, such as once every 12 hours, do not apply.
+
+### Send for real
+
+Switch **Send for real** on to carry the steps out. The button changes to **Send for real**.
+
+<Warning>
+With **Send for real** on, the customer in the conversation you chose really gets every message in the workflow, now, and the conversation really changes. Test on a conversation with yourself or a colleague.
+</Warning>
+
+## The run log
+
+Open a workflow and scroll to **Run log**. It lists the newest 100 runs, with who each was for and when it started. The line at the top counts the runs in the last 7 days and how many failed.
+
+Click a run to see each step in order and what it did. **Open the conversation** takes you to the chat.
+
+Each run has a status. When more than one status is present, you can filter the list by it.
+
+| Status | What it means |
+| --- | --- |
+| **Completed** | The run finished. |
+| **Failed** | A step tried and was refused. The run stopped at that step. |
+| **Skipped** | The run finished, but every step that acts was skipped, so nothing was sent. |
+| **Stopped** | The run was ended on purpose: the workflow was switched off or deleted, or your subscription lapsed. |
+| **Waiting** | The run is paused at a **Wait** or **Did they reply?** step. It shows the time it is waiting until. |
+| **Running** | The run is under way. |
+
+Each step shows **Done**, **Skipped** or **Failed**. A condition shows **Yes** or **No**, the branch it took.
+
+## Skipped and failed steps
+
+A step is **skipped** when something it needs is missing. The run carries on to the next step. Common reasons:
+
+- The step was never filled in: no message text, no template chosen, nobody chosen to assign to, no tag, no amount.
+- **Send a product** with no shop connected.
+- **Send a payment link** with no payment provider connected.
+- **Notify the team** when nobody has the phone app signed in, or their notifications are off.
+- It was a test run with **Send for real** off.
+
+A step **fails** when it tried and was refused. The run stops there and the reason is shown under the step. Common reasons:
+
+- A **Send a message**, **Send a product** or **Send a payment link** step ran outside the 24-hour window. Use a template to reach those customers.
+- Meta refused the message or the template.
+- A marketing template was addressed to a customer who has opted out.
+- The member an **Assign to someone** step names has left the workspace.
+- The product's SKU or ID was not found in your shop.
+- The webhook a **Call a webhook** step names is paused or deleted, or your plan no longer includes webhooks.
+
+A run also ends as **Stopped** if it reaches 25 steps.
+
+## When a workflow fails
+
+When a run fails, every owner and admin gets a notification in the bell, with the workflow's name and the reason. It links to the workflow.
+
+The first failure in any hour also sends an email, to owners and admins who have **Scheduled workflow ran** switched on in their notification settings. Later failures in the same hour are in the bell and the run log only. Failed test runs do not send alerts.
+
+Scheduled workflows report differently:
+
+- After each scheduled run you get one summary email, not one per conversation. It says how many conversations the run reached, how many were sent to, and how many failed, were not sent or are still waiting.
+- If any of those runs failed, one notification in the bell says the workflow ran with failures.
+- If a scheduled run is refused, the bell says the workflow did not run and why. That happens when the audience is over 1,000 conversations, or when its templates would take you past your plan's broadcast reach.
+
+Home lists the workflows that are switched on and how often each has run.
+
+## Related
+
+- [Build a workflow](/workflows/build-a-workflow)
+- [Workflows overview](/workflows/overview)
+- [Notifications](/conversations/notifications)
+- [Reach and results](/broadcasts/reach-and-results)

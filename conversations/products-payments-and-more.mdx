@@ -1,0 +1,98 @@
+---
+title: "Products, payment links and more"
+description: "Send products, payment links, forms and locations from a chat, and what each one needs first."
+---
+
+Everything you can send besides a typed message is behind one button. Choose **More actions** (the plus button beside the reply box) to open the list.
+
+## What each action needs
+
+| Action | What it needs first |
+| --- | --- |
+| **Send product** | A shop or till connected under **Integrations**, with products Companion can read. |
+| **Payment link** | Square connected under **Integrations**. |
+| **Send template** | An approved template. This is also how you send a form. |
+| **Send location** | A place saved under **Settings**, **General**, **Locations**. |
+| **Send photo**, **Send document** | Nothing. See [Replying to customers](/conversations/replying). |
+
+<Note>
+Only **Send template** works once the 24-hour window has shut. The other actions are greyed out until the customer writes again. In a website chat, only **Send photo** is offered.
+</Note>
+
+## Send a product
+
+<Steps>
+  <Step title="Open the product picker">
+    Choose **More actions**, then **Send product**.
+  </Step>
+  <Step title="Find the product">
+    The first few products are listed straight away. Search by name or product code to find another.
+  </Step>
+  <Step title="Send it">
+    Choose **Send** beside the product.
+  </Step>
+</Steps>
+
+The customer gets the product's photo, name, price and a short description, with a **View product** button that opens its page in your shop. If the product has no public page, it goes as a photo with a caption, or as text when there is no photo. Stock levels are never sent.
+
+If the picker says **No catalogue is connected**, an owner or admin needs to connect your shop. See [Integrations](/integrations/overview).
+
+## Send a payment link
+
+<Steps>
+  <Step title="Open the panel">
+    Choose **More actions**, then **Payment link**. A panel opens beside the chat.
+  </Step>
+  <Step title="Add what the customer is paying for">
+    Search your catalogue and add items, or add your own item with a name and a price. Change quantities, and add a discount or shipping if you need to. Then choose **Continue to terms**.
+  </Step>
+  <Step title="Choose how much is due now">
+    Take the full amount or a deposit. Then choose **Review link**.
+  </Step>
+  <Step title="Check and send">
+    The review step shows what the customer will see. Choose **Send to** followed by their name.
+  </Step>
+</Steps>
+
+The link arrives as a WhatsApp message and opens a Square checkout. The money goes to your Square account.
+
+When the customer pays:
+
+- they get a message in the chat confirming the payment
+- whoever sent the link gets a notification under the bell and on their phone
+- the payment counts towards **Sales through chat** in [Analytics](/analytics/analytics).
+
+To find chats with a link that is still unpaid, filter the list by **Awaiting payment**. See [The Conversations screen](/conversations/inbox).
+
+If no payment provider is connected, the send is refused and you are told to connect Square. See [Payment links](/integrations/payment-links).
+
+## Send a form
+
+A form is a template with a form button. Send it like any other template: choose **More actions**, then **Send template**, and pick the form.
+
+The customer fills it in inside WhatsApp, and their answers appear in the conversation. See [Forms](/templates/forms) and [Form submissions](/templates/form-submissions).
+
+## Send a location
+
+<Steps>
+  <Step title="Open the list of places">
+    Choose **More actions**, then **Send location**.
+  </Step>
+  <Step title="Pick a place and send">
+    Choose one of your saved places, then **Send**. It arrives as a pin the customer can open in their maps app.
+  </Step>
+</Steps>
+
+If no places are saved yet, the dialog says so. An owner or admin adds them under **Settings**, **General**, in the **Locations** section: a name, the address to show under the pin, and a Google Maps link. A workspace can save up to 10 places.
+
+## Bookings
+
+There is no separate booking button in the reply box. If your business takes bookings through a form, send that form with **Send template**.
+
+## Related
+
+- [Replying to customers](/conversations/replying)
+- [Integrations](/integrations/overview)
+- [Payment links](/integrations/payment-links)
+- [Forms](/templates/forms)
+- [Workspace settings](/settings/workspace)

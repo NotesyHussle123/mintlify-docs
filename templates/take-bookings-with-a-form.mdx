@@ -1,0 +1,40 @@
+---
+title: "Take bookings with a form"
+description: "Ask customers for the service, day and time they want, inside WhatsApp."
+---
+
+Companion takes booking requests with a form. The customer fills it in inside WhatsApp, says which service, day and time they would like, and their answers come back to you in the chat.
+
+<Note>
+Companion does not offer free times from a calendar or add appointments to a diary by itself. **Google Calendar** is listed on the Integrations page, but connecting it does not change anything in your chats yet.
+</Note>
+
+## Set it up
+
+<Steps>
+  <Step title="Build the form">
+    Go to **Templates**, choose **Create new** and pick **Template with a form**. Add the questions you need, then choose **Submit for review**. Meta has to approve it before it can be sent.
+  </Step>
+  <Step title="Send it">
+    Send it from a conversation with **Send template**, or from a workflow or a broadcast.
+  </Step>
+  <Step title="Read the answers">
+    The customer's answers appear in the conversation. All of them are listed under **Form submissions** on the template's page.
+  </Step>
+  <Step title="Confirm with the customer">
+    Reply in the conversation to confirm the time, and add it to your own diary.
+  </Step>
+</Steps>
+
+## Follow up without doing it by hand
+
+A workflow can act when a form comes back. Use the **Form submitted** trigger, limited to your booking template if you like, and add steps such as **Notify the team**, **Assign to someone** or **Add a tag**.
+
+On the Business plan, a form submission can also be posted to your own booking system with an outgoing webhook. See [Webhooks and custom API](/integrations/webhooks-and-custom-api).
+
+## Related
+
+- [Forms](/templates/forms)
+- [Form submissions](/templates/form-submissions)
+- [Build a workflow](/workflows/build-a-workflow)
+- [Integrations overview](/integrations/overview)

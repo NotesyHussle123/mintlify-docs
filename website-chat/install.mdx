@@ -1,0 +1,95 @@
+---
+title: "Install the widget"
+description: "Create a widget, say which sites it may appear on, paste the snippet into your site and check it works."
+---
+
+<Note>
+Owners and admins only.
+</Note>
+
+Use one widget per site. A campaign landing page can have its own, with its own look and its own figures.
+
+## Create a widget and install it
+
+<Steps>
+  <Step title="Create the widget">
+    Go to **Website chat** and choose **Create a widget**, or **New widget** if you already have one. Give it a name, such as the site it is for, and choose **Create**. Only your team sees the name.
+  </Step>
+  <Step title="Add the sites it may appear on">
+    Open the **Install** tab. Under **Where it may appear**, type your site's domain, such as `shop.example.com`, choose **Add**, then **Save**.
+  </Step>
+  <Step title="Copy the snippet">
+    Under **The snippet**, pick the tab for your platform and copy the code.
+  </Step>
+  <Step title="Paste it into your site">
+    Paste it once, just before the closing body tag, on every page. Then publish your site.
+  </Step>
+  <Step title="Check it is live">
+    Under **Check it is live**, enter the address of a page on your site and choose **Check**.
+  </Step>
+</Steps>
+
+## The sites it may appear on
+
+The widget shows on the domains you list and nowhere else. A snippet copied to somebody else's site shows nothing.
+
+- Until you add a domain, the widget does not appear anywhere. The Website chat page shows **Needs a domain**.
+- A domain is matched exactly. `example.com` and `www.example.com` are different, so add both if your site uses both.
+- `*.example.com` covers `example.com` and every subdomain of it.
+- You can list up to 20 domains.
+
+## Where the snippet goes
+
+The snippet is one line and is the same on every platform. It looks like this, with your widget's own key:
+
+```html
+<script src="https://app.msgcompanion.com/w.js" data-widget="YOUR_WIDGET_KEY" async></script>
+```
+
+Copy it from the **Install** tab so the key is right. The tab has a set of steps for each platform:
+
+| Platform | Where to paste it |
+| --- | --- |
+| **Any website** | Just before the closing body tag, on every page. |
+| **Shopify** | **Online Store**, then **Themes**, **Edit code**, `theme.liquid`. Paste it above the closing body tag and save. |
+| **WordPress** | **Appearance**, then **Theme File Editor**, `footer.php`. Any header-and-footer plugin works too. |
+| **WooCommerce** | The same as WordPress: in the theme's footer, above the closing body tag. |
+| **Wix** | **Settings**, then **Custom Code**, **Add Custom Code**. Put it in **Body**, on all pages. |
+| **Squarespace** | **Settings**, then **Advanced**, **Code Injection**. Paste it into **Footer**. |
+| **Webflow** | **Project Settings**, then **Custom Code**. Paste it into **Footer Code** and publish. |
+
+You paste the snippet once. Everything else about the widget is changed in Companion, with no code.
+
+## How long changes take
+
+Changes you save go live on your site within a few minutes. That includes a new domain and removing the widget.
+
+## Check it works
+
+**Check it is live** fetches the page you enter and looks for your snippet.
+
+- **Found it. The widget is installed on that page.** The snippet is in place.
+- **The snippet is not on that page yet.** Paste it before the closing body tag and publish, then check again.
+
+Then open your site and send a test message. It should arrive in **Conversations**.
+
+On the Website chat page, each widget shows how it is doing: **Live** when a chat started in the last day, **No traffic** when none has, **Needs a domain** when no domain is listed.
+
+If the button does not appear on your site:
+
+- Check the page's domain is on the list, spelled exactly as in the address bar.
+- Check the **Behaviour** tab. The widget may be set to appear after a delay, to hide outside opening hours, or to show only on certain pages.
+- Check **Show on** in the **Appearance** tab. It may be set to mobile only or desktop only.
+
+## Remove a widget
+
+On the **Install** tab, under **Remove this widget**, choose **Remove widget** and confirm by typing its name. It stops appearing within a few minutes. Conversations it started are kept. You can then take the snippet out of your site.
+
+A Shopify store's chat button cannot be removed here. See [The Shopify app](/website-chat/shopify-app).
+
+## Related
+
+- [Website chat overview](/website-chat/overview)
+- [Customise the widget](/website-chat/customise)
+- [The Shopify app](/website-chat/shopify-app)
+- [Troubleshooting](/help/troubleshooting)

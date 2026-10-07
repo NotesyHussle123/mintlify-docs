@@ -1,0 +1,85 @@
+---
+title: "Payment links with Square"
+description: "Connect your Square account, choose the location, send a payment link in a chat and see when it is paid."
+---
+
+A payment link lets a customer pay you from the chat. It opens a Square checkout, and the money lands in your own Square account. Companion never holds it.
+
+<Note>
+Owners and admins connect Square. Anyone who can open a conversation can send a payment link in it. On Starter, Square is one of your 2 integrations.
+</Note>
+
+## Connect Square
+
+<Steps>
+  <Step title="Open Integrations">
+    Go to **Integrations** and find **Square**. It is under **Payments**.
+  </Step>
+  <Step title="Choose Add">
+    A window opens. Sign in to Square and approve access.
+  </Step>
+  <Step title="Check the card">
+    The Square card shows **Connected**, "Creates payment links." and the location payments go to, with its currency.
+  </Step>
+</Steps>
+
+Your Square account needs at least one active location. Without one, Companion cannot connect it.
+
+Square is connected, checked and disconnected on the Integrations page. There is no separate payments page in Settings.
+
+## Choose the location
+
+Payment links are raised at one Square location. Companion picks the first active location that takes card payments.
+
+If your account has more than one location, the Square card shows **Location for payment links**. Choose another there and it is saved straight away. Links you send from then on go to that location. Reconnecting keeps the location you chose.
+
+## Send a payment link
+
+<Steps>
+  <Step title="Open the conversation">
+    Open a WhatsApp conversation. The customer must have written in the last 24 hours.
+  </Step>
+  <Step title="Start a link">
+    Choose **More actions**, then **Payment link**.
+  </Step>
+  <Step title="Add what they are paying for">
+    Search your connected shop for a product, or add an item with a name and a price of your own. Then choose **Continue to terms**.
+  </Step>
+  <Step title="Set what is due now">
+    Choose how much the customer pays with this link, then go on to the review.
+  </Step>
+  <Step title="Review and send">
+    Check the summary and the preview of the message, then choose **Send to** followed by the customer's name.
+  </Step>
+</Steps>
+
+The customer gets a WhatsApp message with the link to pay.
+
+A link cannot be sent outside the 24-hour window. Companion checks this first, so no checkout is left behind in Square. Send a template to bring the customer back into the window.
+
+A workflow can also send a link with the **Send a payment link** step. See [Build a workflow](/workflows/build-a-workflow).
+
+## When a link is paid
+
+When the customer pays:
+
+- The link in the conversation shows **Paid**.
+- The customer gets a short message confirming the payment and the amount.
+- The person who sent the link gets a **Payment received** notification, in the bell and on their phone. If they can no longer open that conversation, whoever it is assigned to is told instead.
+- Members with **Payment received** switched on in their notification settings get an email.
+- Any workflow with the **Payment link is paid** trigger runs.
+
+<Warning>
+If the Square card says payment updates are not being received, a paid link will not show as paid in Companion. Email [support@msgcompanion.com](mailto:support@msgcompanion.com).
+</Warning>
+
+## Disconnect Square
+
+On the Square card, choose **Disconnect** and confirm. Payment links stop working until you connect again. Nothing is deleted in Square.
+
+## Related
+
+- [Integrations overview](/integrations/overview)
+- [Products, payments and more](/conversations/products-payments-and-more)
+- [Build a workflow](/workflows/build-a-workflow)
+- [Notifications](/conversations/notifications)

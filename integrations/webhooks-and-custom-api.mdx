@@ -1,0 +1,139 @@
+---
+title: "Webhooks and custom API"
+description: "Post Companion's events to your own system with signed outgoing webhooks, and where the custom API connector stands."
+---
+
+This page is for whoever looks after your own systems. It is a little more technical than the rest of the help site.
+
+<Note>
+Owners and admins only. Outgoing webhooks need the Business plan. They are not part of Starter, Growth or the free trial.
+</Note>
+
+## Outgoing webhooks
+
+An outgoing webhook posts a signed JSON request to an address of yours each time something happens in your workspace. Use it to pass form answers, payments and messages to your own system, or to a tool such as Zapier or Make.
+
+### Add a webhook
+
+<Steps>
+  <Step title="Open Developer">
+    Go to **Settings**, then **Developer**, and choose **Add a webhook**.
+  </Step>
+  <Step title="Enter the address">
+    The **Address** must start with `https` and be reachable from the internet. Add a **Name** if you want one.
+  </Step>
+  <Step title="Choose the events">
+    Tick at least one event, then save.
+  </Step>
+  <Step title="Copy the signing secret">
+    Companion shows the signing secret once. Copy it and keep it somewhere safe. It cannot be shown again.
+  </Step>
+  <Step title="Send a test">
+    Open the menu on the webhook and choose **Send a test**. Companion tells you what your server replied.
+  </Step>
+</Steps>
+
+A workspace can have up to 10 webhooks.
+
+### Events
+
+| Event | Type | When it is sent |
+| --- | --- | --- |
+| **Form submitted** | `form.submitted` | A customer completed a WhatsApp form. Carries every answer. |
+| **Payment link paid** | `payment_link.paid` | A payment link sent from a conversation was paid. |
+| **Message received** | `message.received` | A customer sent a message, on WhatsApp or website chat. High volume. |
+| **Workflow step** | `workflow.step` | A workflow reached a **Call a webhook** step that names this webhook. |
+
+The list also offers **Appointment booked** (`appointment.booked`). Companion has no booking feature to set up at the moment, so a new workspace will not receive it. See [Take bookings with a form](/templates/take-bookings-with-a-form).
+
+**Send a test** sends a `webhook.test` event, whatever the webhook is subscribed to.
+
+### What a request looks like
+
+Each request is a `POST` with a JSON body:
+
+```json
+{
+  "id": "evt_4f1c0a9d2b7e4c53a1d86e0f9b3c7a21",
+  "type": "payment_link.paid",
+  "created_at": "2026-10-07T09:30:00.000Z",
+  "workspace_id": "your-workspace-id",
+  "data": {
+    "payment_link_id": "…",
+    "amount_minor": 4000,
+    "currency": "GBP",
+    "description": "Deposit",
+    "conversation_id": "…",
+    "customer": { "name": "Emma Larsson", "phone": "+447700900412" }
+  }
+}
+```
+
+`data` depends on the event. Amounts are in minor units, so 4000 is £40.00.
+
+Each request carries these headers:
+
+| Header | What it holds |
+| --- | --- |
+| `X-Companion-Signature` | The timestamp and signature, as `t=...,v1=...`. |
+| `X-Companion-Event` | The event type. |
+| `X-Companion-Delivery` | The event's `id`. It is the same on every retry, so you can use it to ignore duplicates. |
+
+### Check the signature
+
+The signature proves a request came from Companion and was not changed on the way. `v1` is an HMAC-SHA256, in hex, of the timestamp, a full stop and the raw request body, made with your signing secret.
+
+```js
+import { createHmac, timingSafeEqual } from "node:crypto";
+
+function isFromCompanion(secret, rawBody, header) {
+  const parts = Object.fromEntries(header.split(",").map((p) => p.split("=", 2)));
+  const timestamp = Number(parts.t);
+  if (!Number.isFinite(timestamp) || !parts.v1) return false;
+
+  // Refuse old requests, so a captured one cannot be replayed later.
+  if (Math.abs(Date.now() / 1000 - timestamp) > 300) return false;
+
+  const expected = createHmac("sha256", secret).update(`${timestamp}.${rawBody}`).digest("hex");
+  const a = Buffer.from(expected, "hex");
+  const b = Buffer.from(parts.v1, "hex");
+  return a.length === b.length && timingSafeEqual(a, b);
+}
+```
+
+Sign the raw body exactly as it arrived, before any JSON parsing.
+
+To replace a secret, open the menu on the webhook and choose **New signing secret**. The old one stops working at once, so update your server straight away.
+
+### Replies and retries
+
+- Reply with any `2xx` status within 10 seconds. That counts as delivered.
+- If your server cannot be reached, takes longer than 10 seconds, or replies `5xx`, `408`, `425` or `429`, Companion tries again: up to 8 more times, spaced out over several hours.
+- Any other `4xx` reply is not retried.
+- Redirects are not followed. Use the final address.
+- After 25 failed attempts in a row, the webhook is paused. Put your server right, then choose **Resume**.
+
+Each webhook shows how it is doing: **Delivering**, **Failing**, **Paused** or **Nothing sent yet**. From its menu you can **Send a test**, **Edit**, **Pause** or **Resume**, and **Delete**.
+
+### If you leave the Business plan
+
+Your webhooks are kept but nothing is sent to them. You can still pause or delete them. They start again when the workspace is back on Business.
+
+### Call a webhook from a workflow
+
+A workflow's **Call a webhook** step posts a `workflow.step` event to the webhook you pick. It carries the customer's name, phone number and tags, the conversation, and the note you typed on the step, so your system can tell which step called it. See [Build a workflow](/workflows/build-a-workflow).
+
+## Custom API connector
+
+The custom API connector is meant to let your own system supply products, customers and orders to Companion's chats. It is listed on the Integrations page under **Custom**, and is part of the Business plan.
+
+<Warning>
+The custom API connector cannot be connected yet. Choosing **Add** on its card tells you so. To send data from Companion to your own system today, use outgoing webhooks.
+</Warning>
+
+## Related
+
+- [Integrations overview](/integrations/overview)
+- [Build a workflow](/workflows/build-a-workflow)
+- [Form submissions](/templates/form-submissions)
+- [Plans](/billing/plans)

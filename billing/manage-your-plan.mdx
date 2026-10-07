@@ -1,0 +1,105 @@
+---
+title: "Manage your plan"
+description: "Choose or change a plan, switch between monthly and yearly billing, add seats, update your card, find invoices and cancel."
+---
+
+<Note>Only the owner can change billing. Admins can see the plan, usage and invoices, but not change them.</Note>
+
+Everything here is under **Settings**, **Billing**. The page shows your plan, your next charge, the card on file, how much of each plan limit is in use, and your invoices.
+
+Payments are handled by Stripe. Before any change, Companion shows you what changes, the new price and what is charged today. Nothing is charged until you confirm.
+
+## Choose a plan
+
+<Steps>
+  <Step title="Open the plans page">
+    On **Billing**, choose **Choose a plan**.
+  </Step>
+  <Step title="Pick monthly or annual">
+    Use the **Monthly** and **Annual** switch above the comparison. Annual billing charges ten months for the year.
+  </Step>
+  <Step title="Pick the plan">
+    Choose the button under Starter, Growth or Business, and check the summary.
+  </Step>
+  <Step title="Add your card">
+    Confirm, then enter your card on Stripe's page. You come back to **Billing** when it is done.
+  </Step>
+</Steps>
+
+If your free trial is still running, nothing is charged today. The first payment is taken on the day the trial ends. See [Free trial](/billing/free-trial).
+
+Everyone already in the workspace keeps a seat. If you have more people and pending invitations than the plan includes, the extra seats you need are added at the plan's seat price, and the summary says so before you confirm.
+
+## Change plan
+
+On **Billing**, choose **Explore plans**, then **Upgrade** or **Downgrade** under the plan you want. The summary shows the amount for today.
+
+- **Moving up.** The difference for the time left in your current billing period is taken from your card now. Your billing date stays the same.
+- **Moving down.** Unused time is kept as credit and comes off your next invoices. It is not refunded to your card.
+
+### Moving down while over a limit
+
+Nothing you have set up is switched off. You keep what you have, and you cannot add more of anything that is past the smaller plan's limits. For example, if you have eight workflows switched on and move to Starter, they all keep running, but you cannot switch on another until fewer than five are on.
+
+Seats work differently, because everyone keeps a seat: the extra seats you need on the smaller plan are added to its price. Remove a member first if you want to avoid that.
+
+## Switch between monthly and yearly
+
+On the plans page, pick **Monthly** or **Annual**, then choose **Switch to annual** or **Switch to monthly** under your current plan. Your billing date moves to the day you switch.
+
+## Add or remove seats
+
+You can add seats once you have chosen a plan.
+
+<Steps>
+  <Step title="Set the number">
+    On **Billing**, under **What your plan covers**, set the number you want beside **Extra seats**.
+  </Step>
+  <Step title="Review and confirm">
+    Choose **Review change**, check what is charged today, and confirm.
+  </Step>
+</Steps>
+
+You cannot go below the number of seats in use. Seats in use are the people in the workspace plus pending email invitations, so remove a member or revoke an invitation first. See [Invite people](/team/invite-people).
+
+## Update your card
+
+On **Billing**, under **Manage subscription**, choose **Manage in Stripe**. Stripe's billing portal opens, where you can update your card and add a VAT number.
+
+## Invoices
+
+The **Invoices** table on **Billing** lists your last five billing periods. Choose the download button beside one to open it. For older invoices, choose **Manage in Stripe**.
+
+Receipts and invoices are emailed to the **Billing email** shown on the page.
+
+## If a payment fails
+
+Everything keeps working for 14 days from the first failed payment, and a banner asks you to update your card. After that, sending pauses until the card is put right: no messages, broadcasts or workflows. Messages from customers still arrive, and nothing is deleted.
+
+## Cancel
+
+<Steps>
+  <Step title="Choose Cancel subscription">
+    On **Billing**, under **Manage subscription**, choose **Cancel subscription**.
+  </Step>
+  <Step title="Confirm">
+    Check the date your plan ends and choose **Cancel subscription**.
+  </Step>
+</Steps>
+
+What happens:
+
+- Your plan runs to the end of the period you have paid for. Everything works as it does now until then.
+- Nothing is charged for cancelling, and nothing is refunded.
+- If you cancel during a free trial after choosing a plan, the trial runs to its end and no payment is taken.
+- After the plan ends, sending, broadcasts and workflows stop. Messages from customers still arrive, and your conversations and settings are kept.
+- You can change your mind at any time before the plan ends. Choose **Keep my plan** on **Billing**.
+
+Cancelling does not delete anything. To close the workspace and remove its data, see [Your data](/settings/your-data).
+
+## Related
+
+- [Plans](/billing/plans)
+- [Free trial](/billing/free-trial)
+- [What Meta charges](/billing/meta-charges)
+- [Roles and what each can do](/team/roles)

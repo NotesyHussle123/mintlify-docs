@@ -1,0 +1,116 @@
+---
+title: "Reach and results"
+description: "Your monthly broadcast allowance, what a broadcast's results show, and what to do when one stops."
+---
+
+<Note>
+Owners, admins and managers can see broadcasts and their results. Sending, cancelling and resuming also need one of those roles.
+</Note>
+
+## Broadcast reach
+
+Broadcast reach is the number of different contacts your broadcasts go to in a calendar month. Each plan covers a number of contacts a month.
+
+| Plan | Broadcast reach a month |
+| --- | --- |
+| Starter | 1,000 contacts |
+| Growth | 5,000 contacts |
+| Business | 25,000 contacts |
+
+The free trial runs on Growth's limits.
+
+How reach is counted:
+
+- Each contact counts once a month, however many broadcasts you send them.
+- A scheduled broadcast counts from the moment you schedule it, in the month it sends.
+- People left out for having opted out do not count.
+- The month follows your workspace's time zone, and the count starts again when the month turns.
+
+When you choose an audience, **This month's broadcast allowance** shows how much the broadcast uses and how much is left afterwards.
+
+A broadcast that would go past the allowance cannot be sent. Choose a smaller audience, wait for the month to turn, or move up a plan. See [Manage your plan](/billing/manage-your-plan).
+
+The allowance is checked again when a scheduled broadcast starts sending. If other broadcasts have used it up in the meantime, the broadcast stops before anything is sent.
+
+Reach is Companion's own limit. Meta's charges for the messages are separate. See [What Meta charges](/billing/meta-charges).
+
+## The results page
+
+Go to **Broadcasts** and select a broadcast. The page updates by itself while the broadcast sends.
+
+### Status
+
+| Status | What it means |
+| --- | --- |
+| **Scheduled** | Waiting for its time. |
+| **Sending** | Going out now. |
+| **Sent** | Finished. |
+| **Cancelled** | Someone cancelled it. Nobody still waiting was sent to. |
+| **Stopped** | It halted part-way, or before it began. The reason is shown. |
+
+### Counts
+
+| Count | What it means |
+| --- | --- |
+| **Sent** | Handed to WhatsApp. |
+| **Delivered** | Reached the customer's phone. |
+| **Read** | The customer opened it. |
+| **Failed** | Could not be sent or delivered. The reason is shown beside the recipient. |
+| **Skipped** | Not attempted, for example because the person opted out before it sent, the broadcast was cancelled or stopped, or your number's daily limit was reached. |
+| **Waiting** | Not yet sent. |
+
+Delivered and read keep moving after a broadcast finishes, as customers' phones report back.
+
+Once messages have gone out, the page also shows **Replied within 72 hours** and **Opted out afterwards**: how many recipients wrote back, and how many opted out, within 72 hours of their message.
+
+Beside the counts are the template, the audience, the number it was sent from, who created it and when.
+
+### Recipients
+
+The **Recipients** list shows every person, their status and the reason for any failure or skip. Filter it by status, and open a recipient's conversation from their row.
+
+Choose **Download results** for a CSV with each recipient's name, phone number, status, reason, when it was sent, and whether they replied or opted out within 72 hours.
+
+## Why a broadcast stops
+
+A broadcast shows **Stopped** when carrying on would fail for everyone, or would harm your number's standing with Meta. Open the broadcast to see the reason. The usual ones are:
+
+- the template was paused, disabled or removed
+- Meta has restricted your WhatsApp Business account, or flagged the number for sending too much too quickly
+- a billing problem at Meta, such as no payment method on your WhatsApp account
+- the number the broadcast sends from was removed, or needs reconnecting
+- the month's broadcast allowance ran out before a scheduled broadcast began
+- your Companion subscription has lapsed
+- WhatsApp kept limiting how fast your number could send. Wait a few minutes before resuming
+
+A brief "slow down" from WhatsApp does not stop a broadcast. Companion waits and carries on.
+
+## Resume a broadcast
+
+<Steps>
+  <Step title="Put the cause right">
+    Read the reason on the broadcast's page and fix it. For example, add a payment method at Meta or reconnect the number.
+  </Step>
+  <Step title="Resume">
+    Open the broadcast and choose **Resume**. The button says how many people are left.
+  </Step>
+</Steps>
+
+Sending carries on with the people it had not reached. Nobody it already tried is sent to again, and anyone who has opted out since is left out.
+
+If it stopped before anyone was sent to, resuming works out the audience again and starts from the beginning.
+
+To reach people who failed or were skipped on a finished broadcast, choose **Send to those not reached**. See [Send a broadcast](/broadcasts/send-a-broadcast).
+
+## Where replies go
+
+Replies go into **Conversations**, like any other message, where your team answers them. A reply opens the 24-hour window, so you can answer freely.
+
+A customer who replies STOP is opted out of marketing automatically. See [Opt-outs](/contacts/opt-outs).
+
+## Related
+
+- [Send a broadcast](/broadcasts/send-a-broadcast)
+- [Audiences](/broadcasts/audiences)
+- [Plans](/billing/plans)
+- [Inbox](/conversations/inbox)

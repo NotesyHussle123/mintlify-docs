@@ -1,0 +1,81 @@
+---
+title: "Integrations overview"
+description: "Connect your shop and your payments to Companion, read what a connected card tells you, and see what your plan allows."
+---
+
+An integration connects a system you already use, so your team can use it inside a chat. Open **Integrations** in the sidebar to see what can be connected and what already is.
+
+<Note>
+Owners and admins connect, check and disconnect integrations. Everyone else can look.
+</Note>
+
+## What you can connect today
+
+| Integration | What it gives you |
+| --- | --- |
+| [Shopify](/integrations/shopify) | Send products from your store in a chat, see each customer's recent orders, and add your Shopify customers to Contacts. |
+| [Square](/integrations/payment-links) | Send a payment link in a chat. The money lands in your Square account. |
+
+Other systems are listed on the page too. Companion does not read anything from them yet, so connecting one changes nothing in your chats. Such a card says **Connected. Companion does not read anything from this yet.** and it does not use one of your plan's integrations.
+
+To ask for one, choose **Suggest an integration** on the page.
+
+## Finding your way around the page
+
+The tabs group integrations by kind: **All**, **Ecommerce**, **POS**, **Payments**, **Calendars**, **Email marketing**, **CRM** and **Custom**. Once something is connected, a **Connected** tab lists it, and connected cards come first. You can also search by name.
+
+To connect one, choose **Add** on its card and sign in to that system in the window that opens.
+
+## What connected means
+
+Companion reads from your system live, each time it is needed. Products, stock and orders are not copied into Companion, so what your team sees is what your system says at that moment.
+
+The one thing brought in is your shop's customers, which are added to **Contacts**. See [Sync contacts from your shop](/contacts/sync-from-your-shop).
+
+## The lines on a connected card
+
+A connected card shows **Connected**, or **Needs attention** when something is wrong. Under it are short status lines:
+
+- **What it is used for**, such as "Reads products and stock, customers and orders." or "Creates payment links."
+- **Where from**: your shop's address, or the Square location payments go to.
+- **When it last worked**, such as "Last read 4 minutes ago." For Square it says when it was last checked.
+- **What went wrong**, when a read has failed. If nothing is being read, the line tells you to press **Check connection** or **Reconnect**.
+
+A connected card has three buttons:
+
+- **Check connection** reads one thing through the connection to prove it works. A check that works clears a fault.
+- **Reconnect** signs in to the system again, keeping the same connection.
+- **Disconnect** removes the connection.
+
+## Disconnecting
+
+Choose **Disconnect** on the card. Companion tells you what stops before you confirm, which depends on what the connection was used for:
+
+- For a shop: the product picker and stock, customer lookups and the contact sync, and order history.
+- For Square: payment links.
+
+They stop working until you connect again. Nothing is deleted in the other system.
+
+## How many your plan allows
+
+| Plan | Integrations |
+| --- | --- |
+| Starter | Any 2 |
+| Growth | All |
+| Business | All |
+
+The free trial has Growth's limits.
+
+An integration counts when Companion uses it: a connected shop, or Square. These do not count:
+
+- A system that is connected but that Companion does not read from yet.
+- The Shopify chat button from the free Shopify app. See [The Shopify app](/website-chat/shopify-app).
+
+When your plan's integrations are all taken, Companion refuses another before you sign in to it, and tells you to disconnect one or move up a plan. If you move to a smaller plan, what you have already connected keeps working. A card that says **Connected, but not in use** is a connection your plan has no room for: disconnect another, or move up a plan, to use it.
+
+## Related
+
+- [Connect Shopify](/integrations/shopify)
+- [Payment links with Square](/integrations/payment-links)
+- [Webhooks and custom API](/integrations/webhooks-and-custom-api)
+- [Plans](/billing/plans)
